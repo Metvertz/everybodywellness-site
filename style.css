@@ -26,7 +26,8 @@ header.navbar {
 }
 
 .logo {
-  height: 50px;
+  height: 80px; /* Increase logo size */
+  max-height: 100px;
 }
 
 .nav-links a {
