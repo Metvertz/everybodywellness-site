@@ -56,32 +56,6 @@ header.navbar {
   color: #8e3c28;
 }
 
-/* Page Container & Sidebars */
-.page-container {
-  position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.page-container::before,
-.page-container::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 12px;
-  background-color: #d99c32; /* Goldenrod */
-  z-index: -1;
-}
-
-.page-container::before {
-  left: 0;
-}
-
-.page-container::after {
-  right: 0;
-}
-
 /* Hero section */
 .hero {
   background-color: #585b34; /* Moss Green */
@@ -102,7 +76,7 @@ header.navbar {
 
 .team h2 {
   text-align: center;
-  color: #d99c32;
+  color: #d99c32; /* Goldenrod */
 }
 
 .team-grid {
@@ -118,7 +92,7 @@ header.navbar {
 .team-member {
   display: flex;
   align-items: center;
-  background-color: #fdf8f4;
+  background-color: #fdf8f4; /* Soft beige */
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   padding: 1rem;
