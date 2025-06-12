@@ -1,1 +1,32 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fefefe;
+  color: #222;
+}
+
+header {
+  background: #2e5935; /* dark green */
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+nav a {
+  color: #f4e04d; /* mustard yellow */
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #eee;
+}
 
