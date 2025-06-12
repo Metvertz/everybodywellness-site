@@ -16,9 +16,9 @@ header.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fbeee1; /* Changed to match logo background */
-  color: #333;
-  padding: 1rem 2rem;
+  background-color: #af563a; /* Burnt Orange */
+  color: white;
+  padding: 1.25rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -26,33 +26,46 @@ header.navbar {
 }
 
 .logo {
-  height: 80px; /* Increase logo size */
-  max-height: 100px;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: white; /* fallback */
+  border: 2px solid #fff;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
 }
 
 .nav-links a {
   margin: 0 1rem;
-  color: #333;
-  font-weight: bold;
-}
-
-.donate-button .button {
-  background-color: #af563a; /* Burnt Orange */
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
   color: white;
   font-weight: bold;
 }
 
+.donate-button .button {
+  background-color: white;
+  color: #af563a;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.donate-button .button:hover {
+  background-color: #f5d8cc;
+  color: #8e3c28;
+}
+
 /* Hero section */
 .hero {
-  background-color: #fbeee1;
+  background-color: #585b34; /* Moss Green */
   padding: 4rem 2rem;
   text-align: center;
+  color: white;
 }
 
 .hero h1 {
-  color: #af563a;
+  color: #d99c32; /* Goldenrod */
 }
 
 /* Team section */
@@ -93,7 +106,7 @@ header.navbar {
   object-fit: cover;
   margin-right: 1.5rem;
   flex-shrink: 0;
-  background-color: #f4e4d9; /* fallback background */
+  background-color: #f4e4d9;
 }
 
 .team-info {
