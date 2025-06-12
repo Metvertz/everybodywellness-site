@@ -1,32 +1,86 @@
+/* Base layout */
 body {
-  font-family: sans-serif;
   margin: 0;
-  padding: 0;
-  background: #fefefe;
-  color: #222;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fbeee1; /* Eggshell */
+  color: #333;
 }
 
-header {
-  background: #2e5935; /* dark green */
-  color: white;
-  padding: 2rem;
-  text-align: center;
-}
-
-nav a {
-  color: #f4e04d; /* mustard yellow */
-  margin: 0 1rem;
+a {
   text-decoration: none;
+  color: inherit;
+}
+
+header.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #585b34; /* Moss Green */
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav-links a {
+  margin: 0 1rem;
+  color: white;
   font-weight: bold;
 }
 
-main {
-  padding: 2rem;
+.donate-button .button {
+  background-color: #af563a; /* Burnt Orange */
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
 }
 
+.hero {
+  background-color: #fbeee1;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  color: #af563a;
+}
+
+.team {
+  padding: 2rem;
+  background-color: #fff7f2;
+}
+
+.team h2 {
+  text-align: center;
+  color: #d99c32; /* Goldenrod */
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.team-member {
+  background-color: #f9f0ff; /* Pastel Purple-ish */
+  border-radius: 10px;
+  padding: 1rem;
+  width: 250px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
-  background: #eee;
+  background-color: #eee;
+  font-size: 0.9rem;
 }
-
