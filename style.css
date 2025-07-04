@@ -1,30 +1,24 @@
-/* Base layout */
+/* Reset and base styles */
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fbeee1; /* Eggshell */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fbeee1;
   color: #333;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Navbar */
-header.navbar {
+/* Navigation bar */
+.navbar {
+  background-color: #af563a;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background-color: #af563a; /* Burnt Orange */
-  color: white;
-  padding: 1.25rem 2rem;
+  align-items: center;
+  padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.logo {
+.nav-left .logo {
   height: 80px;
   width: 80px;
   aspect-ratio: 1 / 1;
@@ -36,110 +30,326 @@ header.navbar {
 }
 
 .nav-links a {
-  margin: 0 1rem;
   color: white;
+  text-decoration: none;
+  margin: 0 1rem;
   font-weight: bold;
 }
 
 .donate-button .button {
-  background-color: white;
-  color: #af563a;
+  background-color: #d99c32;
+  color: white;
   padding: 0.5rem 1rem;
+  text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
-  border: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.donate-button .button:hover {
-  background-color: #f5d8cc;
-  color: #8e3c28;
 }
 
 /* Hero section */
 .hero {
-  background-color: #585b34; /* Moss Green */
+  background-color: #585b34;
+  color: white;
   padding: 4rem 2rem;
   text-align: center;
-  color: white;
 }
 
 .hero h1 {
-  color: #d99c32; /* Goldenrod */
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
 }
 
 /* Team section */
 .team {
   padding: 2rem;
-  background-color: #fff7f2;
+  background-color: #fbeee1;
 }
 
 .team h2 {
   text-align: center;
-  color: #d99c32; /* Goldenrod */
+  margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
 .team-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  margin-top: 2rem;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: stretch;
 }
 
 .team-member {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  background-color: #fdf8f4; /* Soft beige */
+  background-color: #fdf8f4;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   padding: 1rem;
-  flex-wrap: wrap;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .team-member img {
-  width: 120px;
-  height: 120px;
-  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
   object-fit: cover;
-  margin-right: 1.5rem;
-  flex-shrink: 0;
-  background-color: #f4e4d9;
-}
-
-.team-info {
-  flex: 1;
-  min-width: 200px;
+  margin-bottom: 1rem;
 }
 
 .team-info h3 {
-  margin-top: 0;
-  color: #af563a;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  text-align: center;
 }
 
-/* Mobile responsiveness */
-@media screen and (max-width: 600px) {
-  .team-member {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+.bio-toggle {
+  display: none;
+}
 
-  .team-member img {
-    margin: 0 0 1rem 0;
-  }
+.bio {
+  max-height: 6em;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.3s ease;
+}
 
-  .team-info {
-    margin: 0;
-  }
+.bio-toggle:checked + .bio {
+  max-height: 1000px;
+}
+
+.bio-toggle:checked + .bio::after {
+  display: none;
+}
+
+.bio::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2em;
+  background: linear-gradient(to bottom, transparent, #fdf8f4);
+  pointer-events: none;
+}
+
+.read-more {
+  color: #af563a;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-decoration: underline;
+  text-align: center;
+}
+
+/* Pillars Section */
+.pillars {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background-color: #fdf8f4;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.pillar {
+  flex: 1 1 250px;
+  max-width: 300px;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pillar h2 {
+  color: #af563a;
+  margin-bottom: 1rem;
+}
+
+.pillar p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 /* Footer */
 footer {
+  background-color: #af563a;
+  color: white;
   text-align: center;
   padding: 1rem;
-  background-color: #eee;
-  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pillars {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .nav-links a {
+    margin: 0.5rem 0;
+  }
+
+  .donate-button {
+    align-self: flex-end;
+    margin-top: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .team-member img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Contact Page */
+.contact-main {
+  background-color: #fbeee1;
+  padding: 3rem 2rem;
+}
+
+.contact-hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-hero h1 {
+  font-size: 2.5rem;
+  color: #585b34;
+  margin-bottom: 0.5rem;
+}
+
+.contact-hero p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.info-box {
+  background-color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 250px;
+}
+
+.info-box h2 {
+  color: #af563a;
+  margin-bottom: 0.5rem;
+}
+
+.info-box p a {
+  color: #585b34;
+  text-decoration: none;
+}
+
+.info-box p a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Form */
+.contact-form-section {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-section h2 {
+  text-align: center;
+  color: #af563a;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form label {
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #af563a;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.contact-form button:hover {
+  background-color: #8d3e29;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-box {
+    max-width: 100%;
+  }
 }
